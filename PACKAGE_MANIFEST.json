@@ -7,8 +7,8 @@
       "sha256": "95665c5c50186c1c00d228f298183d9f1c7d4e476dda1b4bc695992d2d536c7b"
     },
     ".github/workflows/publish-conda.yml": {
-      "bytes": 1747,
-      "sha256": "8fe65bacb165692fafa9f0ff523f8ecba3aa1ce8ddd7ba5a2be6bb171d1e8ce9"
+      "bytes": 2347,
+      "sha256": "8721dde672ea83fff1777d55200f7bd92155c0e2e8d82b294a1d479631d41ceb"
     },
     ".github/workflows/publish-pypi.yml": {
       "bytes": 1400,
@@ -59,8 +59,8 @@
       "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
     },
     "docs/PUBLISHING.md": {
-      "bytes": 2382,
-      "sha256": "7195f31e66234f3949950b1b6d4192ea0517ea6a8938f0726f1b6d55142bc72b"
+      "bytes": 3088,
+      "sha256": "8b95c9c7c1c573f56e5806431244944a92521c2ae01002cc85522c06b0e81df5"
     },
     "pyproject.toml": {
       "bytes": 1459,
