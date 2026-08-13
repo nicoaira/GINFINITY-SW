@@ -1,6 +1,6 @@
 {
   "package": "ginfinity-sw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": {
     ".github/workflows/ci.yml": {
       "bytes": 719,
@@ -16,15 +16,15 @@
     },
     ".github/workflows/publish-testpypi.yml": {
       "bytes": 1832,
-      "sha256": "40122e81f3c3671c1e5c6fbfa1161e4584ce88c189cba8d0aba6c4e826417eba"
+      "sha256": "edba4b23133b5a7b310a84856a8069f975b98afc3d3f04d95105b9818255ab76"
     },
     ".gitignore": {
       "bytes": 127,
       "sha256": "47f64eee00a3b3b34bc1e2f00ddafab6836e75163d18ff81622996a3ce34e4b0"
     },
     "CHANGELOG.md": {
-      "bytes": 601,
-      "sha256": "f6243a89acdba944479d6e27862cf86b2fa68e0c4400337c903a1bbd1fa154b0"
+      "bytes": 799,
+      "sha256": "01b0113accb387a0e023a13c0295555641c004d2f06be43e9fa77e652f498333"
     },
     "CONTRIBUTING.md": {
       "bytes": 454,
@@ -40,7 +40,7 @@
     },
     "README.md": {
       "bytes": 9093,
-      "sha256": "f44636324ab3695fb5087d7987984a5b11a6b37f888970de63adf4d0a3d92f43"
+      "sha256": "7d02ef2ff71759eb6f0396e05396321bd1a6f6188a19d2bd82fce1cbf41def96"
     },
     "conda-recipe/conda_build_config.yaml": {
       "bytes": 15,
@@ -48,7 +48,7 @@
     },
     "conda-recipe/meta.yaml": {
       "bytes": 1039,
-      "sha256": "a85ec2d4989095e8630a3e81e40813fb42d34b558d54605bbacf1ab25249a8f5"
+      "sha256": "c7f4bcc56dda1d2f156830e703a8e2ddd4aad142f87bd6d5fc3c63786e92d4d9"
     },
     "docs/ALGORITHM.md": {
       "bytes": 1007,
@@ -59,12 +59,12 @@
       "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
     },
     "docs/PUBLISHING.md": {
-      "bytes": 3088,
-      "sha256": "8b95c9c7c1c573f56e5806431244944a92521c2ae01002cc85522c06b0e81df5"
+      "bytes": 2949,
+      "sha256": "110026381596d87a768e3451663db47582bc70cd0efa5b1fd49b2d70b6910254"
     },
     "pyproject.toml": {
       "bytes": 1459,
-      "sha256": "58e9c78c6e42035a492e9c9c6d6ba77af430f087bdf6f9a7009f175de3f35de3"
+      "sha256": "b53c569210850148055f0044db0831ad2ac4ac5f4a871af8f377541551e94ec6"
     },
     "requirements.lock": {
       "bytes": 27,
@@ -76,7 +76,7 @@
     },
     "src/ginfinity_sw/__init__.py": {
       "bytes": 562,
-      "sha256": "a5aa3973526de1cbff01ac516fa6dcb124266b5108f5676dd9fe2f3283d0728a"
+      "sha256": "994e776ffff0699a24e06babf93cf3fc38fc8889c3b0a4c424dfa3289f5008f3"
     },
     "src/ginfinity_sw/__main__.py": {
       "bytes": 48,

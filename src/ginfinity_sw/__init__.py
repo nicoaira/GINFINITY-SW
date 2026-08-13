@@ -6,7 +6,7 @@ from .core import (HAVE_NUMBA, Alignment, ScoringParameters, align,
 from .formatting import format_alignment
 from .metadata import read_metadata_table
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 __all__ = [
     "Alignment", "HAVE_NUMBA", "ScoringParameters", "align", "align_scores",
