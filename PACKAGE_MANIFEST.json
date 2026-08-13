@@ -35,8 +35,8 @@
       "sha256": "f9cecfd5d001b623746043c6c7256095f647bf45cbe1a8108931aee8d04f8bb0"
     },
     "README.md": {
-      "bytes": 9112,
-      "sha256": "45725676ea87dd91f76d48ab117651b792886a7c916837c3e1e1851400db987e"
+      "bytes": 9233,
+      "sha256": "666b3edbac2f3404e2255e8e6c1d9e130aa9091eb802e30833dcc55fc393ffa0"
     },
     "conda-recipe/conda_build_config.yaml": {
       "bytes": 15,
