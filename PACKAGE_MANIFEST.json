@@ -67,8 +67,8 @@
       "sha256": "5ed5c1a8614a667e147a7eabf7e27c536cbbf9832e5cef6cce2bc4f375b26862"
     },
     "scripts/update_manifest.py": {
-      "bytes": 1981,
-      "sha256": "368fdaccd51d7f59b79d3579b31cc9c50ce74b775f73d09e3ac6b8acb69b8081"
+      "bytes": 2507,
+      "sha256": "01e0ee30286aed62b5ed3a1383d96b623e902a74a3f486ebdd980669c6b17f4f"
     },
     "src/ginfinity_sw/__init__.py": {
       "bytes": 562,
