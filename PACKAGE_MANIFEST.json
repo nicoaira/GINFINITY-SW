@@ -14,6 +14,10 @@
       "bytes": 1400,
       "sha256": "ea51da1e8eb68f8cc25e58fa3facac80a8cf495d9ee76c87b39d3daf81b3ec1f"
     },
+    ".github/workflows/publish-testpypi.yml": {
+      "bytes": 1832,
+      "sha256": "40122e81f3c3671c1e5c6fbfa1161e4584ce88c189cba8d0aba6c4e826417eba"
+    },
     ".gitignore": {
       "bytes": 127,
       "sha256": "47f64eee00a3b3b34bc1e2f00ddafab6836e75163d18ff81622996a3ce34e4b0"
@@ -55,8 +59,8 @@
       "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
     },
     "docs/PUBLISHING.md": {
-      "bytes": 1595,
-      "sha256": "b871949503189a7f0b37095b248e5041c05db5f0dab185008230442d7db22017"
+      "bytes": 2105,
+      "sha256": "6e8577cf5ea2cacd5163f27172e242fe90d6e2907614d2e315cf1cc130658b48"
     },
     "pyproject.toml": {
       "bytes": 1459,

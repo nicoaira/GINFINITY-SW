@@ -40,6 +40,26 @@ python -m twine upload dist/*
 
 Never commit API tokens or a credential-bearing `.pypirc` file.
 
+## TestPyPI
+
+Register a TestPyPI Trusted Publisher with these values:
+
+- owner: `nicoaira`
+- repository: `GINFINITY-SW`
+- workflow: `publish-testpypi.yml`
+- environment: `testpypi`
+
+Run the **Publish to TestPyPI** workflow manually and retain its default
+`v1.0.0` source ref. Test installation requires PyPI as an additional index for
+runtime dependencies:
+
+```bash
+python -m pip install \
+  --index-url https://test.pypi.org/simple/ \
+  --extra-index-url https://pypi.org/simple/ \
+  ginfinity-sw==1.0.0
+```
+
 ## Personal Anaconda channel
 
 Build and test the recipe locally with:
