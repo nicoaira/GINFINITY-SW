@@ -23,14 +23,11 @@ python -m pip install \
   "git+https://github.com/nicoaira/GINFINITY-SW.git@v1.0.0"
 ```
 
-From the personal Anaconda channel:
+Using conda:
 
 ```bash
-conda install -c YOUR_ANACONDA_CHANNEL -c conda-forge ginfinity-sw
+conda install -c nicolas.aira -c conda-forge ginfinity-sw
 ```
-
-Replace `YOUR_ANACONDA_CHANNEL` with the Anaconda.org account or organization
-that publishes GINFINITY-SW.
 
 For a local checkout:
 

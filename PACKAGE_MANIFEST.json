@@ -39,8 +39,8 @@
       "sha256": "f9cecfd5d001b623746043c6c7256095f647bf45cbe1a8108931aee8d04f8bb0"
     },
     "README.md": {
-      "bytes": 9233,
-      "sha256": "666b3edbac2f3404e2255e8e6c1d9e130aa9091eb802e30833dcc55fc393ffa0"
+      "bytes": 9093,
+      "sha256": "f44636324ab3695fb5087d7987984a5b11a6b37f888970de63adf4d0a3d92f43"
     },
     "conda-recipe/conda_build_config.yaml": {
       "bytes": 15,
@@ -59,8 +59,8 @@
       "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
     },
     "docs/PUBLISHING.md": {
-      "bytes": 2105,
-      "sha256": "6e8577cf5ea2cacd5163f27172e242fe90d6e2907614d2e315cf1cc130658b48"
+      "bytes": 2382,
+      "sha256": "7195f31e66234f3949950b1b6d4192ea0517ea6a8938f0726f1b6d55142bc72b"
     },
     "pyproject.toml": {
       "bytes": 1459,
