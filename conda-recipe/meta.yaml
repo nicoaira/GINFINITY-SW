@@ -1,0 +1,49 @@
+{% set name = "ginfinity-sw" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv"
+  entry_points:
+    - ginfinity-sw = ginfinity_sw.cli:main
+
+requirements:
+  host:
+    - python >=3.10,<3.13
+    - pip
+    - setuptools >=77
+    - wheel
+  run:
+    - python >=3.10,<3.13
+    - numpy >=2.1,<2.2
+    - numba >=0.61,<0.62
+
+test:
+  requires:
+    - pip
+  imports:
+    - ginfinity_sw
+  commands:
+    - pip check
+    - ginfinity-sw --version
+    - python -c "import ginfinity_sw; assert ginfinity_sw.__version__ == '{{ version }}'"
+
+about:
+  home: https://github.com/nicoaira/GINFINITY-SW
+  dev_url: https://github.com/nicoaira/GINFINITY-SW
+  doc_url: https://github.com/nicoaira/GINFINITY-SW/tree/main/docs
+  license: PolyForm-Noncommercial-1.0.0
+  license_file: LICENSE
+  summary: Exact affine-gap Smith-Waterman alignment for vector sequences
+
+extra:
+  maintainers:
+    - nicoaira

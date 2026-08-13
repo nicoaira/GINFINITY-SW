@@ -1,0 +1,114 @@
+{
+  "package": "ginfinity-sw",
+  "version": "1.0.0",
+  "files": {
+    ".github/workflows/ci.yml": {
+      "bytes": 719,
+      "sha256": "95665c5c50186c1c00d228f298183d9f1c7d4e476dda1b4bc695992d2d536c7b"
+    },
+    ".github/workflows/publish-conda.yml": {
+      "bytes": 1631,
+      "sha256": "a1b96f05545ba87ed612f3b45e5b8902a828d4bb5c850bd13dd654e011627c8a"
+    },
+    ".github/workflows/publish-pypi.yml": {
+      "bytes": 1400,
+      "sha256": "ea51da1e8eb68f8cc25e58fa3facac80a8cf495d9ee76c87b39d3daf81b3ec1f"
+    },
+    ".gitignore": {
+      "bytes": 127,
+      "sha256": "47f64eee00a3b3b34bc1e2f00ddafab6836e75163d18ff81622996a3ce34e4b0"
+    },
+    "CHANGELOG.md": {
+      "bytes": 601,
+      "sha256": "f6243a89acdba944479d6e27862cf86b2fa68e0c4400337c903a1bbd1fa154b0"
+    },
+    "CONTRIBUTING.md": {
+      "bytes": 454,
+      "sha256": "8fc345712654d4475b76378d3bb9ffbb9d52814271c936c98cd9de9c60f0897b"
+    },
+    "LICENSE": {
+      "bytes": 4871,
+      "sha256": "dc23f29dd6969434ab926c6faa6d9753b0252ddead643c35583e552522ca0eee"
+    },
+    "MANIFEST.in": {
+      "bytes": 261,
+      "sha256": "f9cecfd5d001b623746043c6c7256095f647bf45cbe1a8108931aee8d04f8bb0"
+    },
+    "README.md": {
+      "bytes": 9112,
+      "sha256": "45725676ea87dd91f76d48ab117651b792886a7c916837c3e1e1851400db987e"
+    },
+    "conda-recipe/conda_build_config.yaml": {
+      "bytes": 15,
+      "sha256": "78bd530315a7131353383262a71ac0a27434576e9d8f0e6e6b04c48745ed1b4f"
+    },
+    "conda-recipe/meta.yaml": {
+      "bytes": 1039,
+      "sha256": "a85ec2d4989095e8630a3e81e40813fb42d34b558d54605bbacf1ab25249a8f5"
+    },
+    "docs/ALGORITHM.md": {
+      "bytes": 1007,
+      "sha256": "c677e4e0b74f15380aa5014b4cdf35a0c5446d79fdd654b357adbc5a4963494b"
+    },
+    "docs/OPERATIONS.md": {
+      "bytes": 937,
+      "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
+    },
+    "docs/PUBLISHING.md": {
+      "bytes": 1595,
+      "sha256": "b871949503189a7f0b37095b248e5041c05db5f0dab185008230442d7db22017"
+    },
+    "pyproject.toml": {
+      "bytes": 1459,
+      "sha256": "58e9c78c6e42035a492e9c9c6d6ba77af430f087bdf6f9a7009f175de3f35de3"
+    },
+    "requirements.lock": {
+      "bytes": 27,
+      "sha256": "5ed5c1a8614a667e147a7eabf7e27c536cbbf9832e5cef6cce2bc4f375b26862"
+    },
+    "scripts/update_manifest.py": {
+      "bytes": 1981,
+      "sha256": "368fdaccd51d7f59b79d3579b31cc9c50ce74b775f73d09e3ac6b8acb69b8081"
+    },
+    "src/ginfinity_sw/__init__.py": {
+      "bytes": 562,
+      "sha256": "a5aa3973526de1cbff01ac516fa6dcb124266b5108f5676dd9fe2f3283d0728a"
+    },
+    "src/ginfinity_sw/__main__.py": {
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    "src/ginfinity_sw/cli.py": {
+      "bytes": 4359,
+      "sha256": "acf481b9fb930ed07e62d54309e5dc0ef98c1bd13c79e96c48b7595debd5683f"
+    },
+    "src/ginfinity_sw/core.py": {
+      "bytes": 10204,
+      "sha256": "7de11fbe40645a191ceb8cc752983ca925cdfd6502feb32c0c77c1d394a6ad22"
+    },
+    "src/ginfinity_sw/formatting.py": {
+      "bytes": 5324,
+      "sha256": "7dc1229b5a228fc76c19aea027823ae827276a03fb7814f409c8be0e526729c6"
+    },
+    "src/ginfinity_sw/metadata.py": {
+      "bytes": 2646,
+      "sha256": "951a96db535022a579c8a9b16c2af9f74a6698df513e34742dba02ace7105607"
+    },
+    "src/ginfinity_sw/py.typed": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "tests/conftest.py": {
+      "bytes": 106,
+      "sha256": "8c75b617726556b77f7765ea7fb2d37a0203fddb8c336687122f0030b78f3bf9"
+    },
+    "tests/test_core.py": {
+      "bytes": 2577,
+      "sha256": "8f7424633605d90b91e7427a5af495bfc4ee0470c63e6d8dc24b92992ecd39cb"
+    },
+    "tests/test_sw_cli.py": {
+      "bytes": 3210,
+      "sha256": "44794f3b879327abe2d18ef0961f0623cb47f7862b88e7504dbf1f2b22e261e4"
+    }
+  }
+}

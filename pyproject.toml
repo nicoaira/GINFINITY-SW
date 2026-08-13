@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ginfinity-sw"
+version = "1.0.0"
+description = "Exact local affine-gap Smith-Waterman alignment for vector sequences"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.10,<3.13"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+authors = [{name = "GINFINITY maintainers"}]
+keywords = ["Smith-Waterman", "alignment", "embeddings", "bioinformatics"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=2.1,<2.2",
+  "numba>=0.61,<0.62",
+]
+
+[project.scripts]
+ginfinity-sw = "ginfinity_sw.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nicoaira/GINFINITY-SW"
+Documentation = "https://github.com/nicoaira/GINFINITY-SW/tree/main/docs"
+Source = "https://github.com/nicoaira/GINFINITY-SW"
+Issues = "https://github.com/nicoaira/GINFINITY-SW/issues"
+Changelog = "https://github.com/nicoaira/GINFINITY-SW/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ginfinity_sw = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

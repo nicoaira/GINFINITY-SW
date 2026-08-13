@@ -1,0 +1,12 @@
+/build/
+/dist/
+/src/*.egg-info/
+/.pytest_cache/
+**/__pycache__/
+*.py[cod]
+*.conda
+*.tar.bz2
+*~
+/.coverage
+/.venv/
+/conda-dist/
