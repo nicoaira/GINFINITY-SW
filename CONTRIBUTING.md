@@ -12,4 +12,6 @@ python -m venv .venv
 ```
 
 Keep this distribution independent of any encoder or checkpoint. Add a
-changelog entry for every user-visible change.
+changelog entry for every user-visible change. Publish a release with
+`python scripts/release.py` after the version bump is on `main`; see
+[docs/PUBLISHING.md](docs/PUBLISHING.md).

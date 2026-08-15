@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Added `scripts/release.py` to preflight a release and publish it by
+  creating the GitHub release that starts the PyPI and Anaconda.org
+  workflows.
+
 ## 1.0.1 - 2026-08-13
 
 - Republished the 1.0.0 aligner from one git tag so PyPI and the personal

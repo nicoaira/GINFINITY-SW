@@ -19,16 +19,16 @@
       "sha256": "edba4b23133b5a7b310a84856a8069f975b98afc3d3f04d95105b9818255ab76"
     },
     ".gitignore": {
-      "bytes": 127,
-      "sha256": "47f64eee00a3b3b34bc1e2f00ddafab6836e75163d18ff81622996a3ce34e4b0"
+      "bytes": 139,
+      "sha256": "7154cde75439d52611b1b7e99e3573a3725efb222f4a92057768d8f99817e92c"
     },
     "CHANGELOG.md": {
-      "bytes": 799,
-      "sha256": "01b0113accb387a0e023a13c0295555641c004d2f06be43e9fa77e652f498333"
+      "bytes": 966,
+      "sha256": "242837874eb15543db7352615f3671c2e703a5b0fdae14d50e03545d2dba4717"
     },
     "CONTRIBUTING.md": {
-      "bytes": 454,
-      "sha256": "8fc345712654d4475b76378d3bb9ffbb9d52814271c936c98cd9de9c60f0897b"
+      "bytes": 588,
+      "sha256": "cbb30b69d9104de53d40a52482a6ec241ae841ba1cd14111c3d22e9351d8985e"
     },
     "LICENSE": {
       "bytes": 4871,
@@ -59,8 +59,8 @@
       "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
     },
     "docs/PUBLISHING.md": {
-      "bytes": 3022,
-      "sha256": "42ebb6f33802b9941c69036c2df05a7c9ae553d5e4273fe18d821728fc087999"
+      "bytes": 4309,
+      "sha256": "15e26b692e83fc7fda84f5ecf8727d7af90137b55cfaa49999d56ff924e7390e"
     },
     "pyproject.toml": {
       "bytes": 1459,
@@ -70,9 +70,13 @@
       "bytes": 27,
       "sha256": "5ed5c1a8614a667e147a7eabf7e27c536cbbf9832e5cef6cce2bc4f375b26862"
     },
+    "scripts/release.py": {
+      "bytes": 11878,
+      "sha256": "d1ae5fd9efa528c4753024caa5751b71af104cab0ac4fdf90f9e6f0d7281c271"
+    },
     "scripts/update_manifest.py": {
-      "bytes": 2507,
-      "sha256": "01e0ee30286aed62b5ed3a1383d96b623e902a74a3f486ebdd980669c6b17f4f"
+      "bytes": 2520,
+      "sha256": "9797157041dc95a491acc026195a725de696b929a9ba08e48dfe31968d7923af"
     },
     "src/ginfinity_sw/__init__.py": {
       "bytes": 562,
@@ -109,6 +113,10 @@
     "tests/test_core.py": {
       "bytes": 2577,
       "sha256": "8f7424633605d90b91e7427a5af495bfc4ee0470c63e6d8dc24b92992ecd39cb"
+    },
+    "tests/test_release.py": {
+      "bytes": 1817,
+      "sha256": "506b139d7aa15d511e8bade2721403e84de399c5ea19604063900bac3477d1c5"
     },
     "tests/test_sw_cli.py": {
       "bytes": 3210,
