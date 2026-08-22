@@ -1,7 +1,7 @@
 """Human-readable alignment rendering."""
 from __future__ import annotations
 
-from .core import Alignment
+from .core import Alignment, AlignmentSet
 
 
 def _state(character: str) -> int:
@@ -130,3 +130,40 @@ def format_alignment(alignment: Alignment, query_sequence: str,
             "",
         ])
     return "\n".join(lines).rstrip()
+
+
+def format_alignment_set(alignment_set: AlignmentSet, query_sequence: str,
+                         query_structure: str, target_sequence: str,
+                         target_structure: str, *, width: int = 60) -> str:
+    """Render one BLAST-style pair summary followed by all HSP blocks.
+
+    The individual tracebacks stay separate because disjoint local HSPs do
+    not form one valid Smith--Waterman path.  They are nevertheless presented
+    under one query-target result, with aggregate and maximum scores in the
+    same summary.
+    """
+    if not isinstance(alignment_set, AlignmentSet):
+        raise TypeError("alignment_set must be AlignmentSet")
+    summary = [
+        f"Total score = {alignment_set.total_score:.6g}",
+        f"Max score = {alignment_set.max_score:.6g}",
+        f"E-value = {alignment_set.evalue:.6g}",
+        (f"Alignments = {alignment_set.alignment_count}; "
+         f"search space = {alignment_set.search_space}"),
+    ]
+    if not alignment_set.alignments:
+        summary.append("No positive-scoring local alignments.")
+        return "\n".join(summary)
+    blocks = []
+    for index, alignment in enumerate(alignment_set.alignments, start=1):
+        blocks.append(
+            f"HSP {index}\n" + format_alignment(
+                alignment,
+                query_sequence,
+                query_structure,
+                target_sequence,
+                target_structure,
+                width=width,
+            )
+        )
+    return "\n".join(summary) + "\n\n" + "\n\n".join(blocks)

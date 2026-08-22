@@ -11,7 +11,14 @@ path for diagnosis.
 
 Numba compiles the core on first use and caches it. Warm the service with one
 small alignment during startup if first-request latency matters. Use
-`traceback=False` for ranking, where only the score is required.
+`traceback=False` with the legacy `rank` API when only the strongest score is
+required. `rank_pairs` and the CLI pair report intentionally trace each
+qualified HSP so that total score, max score, and the aggregate E-value are
+available.
+
+The multi-HSP path repeats dynamic programming up to `max_alignments` times
+per pair. Lower `max_alignments` or raise `min_score` for large archives when
+the pair-level report does not need every weak HSP.
 
 ## Memory safety
 

@@ -1,6 +1,6 @@
 {
   "package": "ginfinity-sw",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "files": {
     ".github/workflows/ci.yml": {
       "bytes": 719,
@@ -23,8 +23,8 @@
       "sha256": "7154cde75439d52611b1b7e99e3573a3725efb222f4a92057768d8f99817e92c"
     },
     "CHANGELOG.md": {
-      "bytes": 966,
-      "sha256": "242837874eb15543db7352615f3671c2e703a5b0fdae14d50e03545d2dba4717"
+      "bytes": 1128,
+      "sha256": "ddb4c64bc48eeae4d29140783461edd8d4e293f16faf7bbc5b85ab90e4af1dc0"
     },
     "CONTRIBUTING.md": {
       "bytes": 588,
@@ -39,8 +39,8 @@
       "sha256": "f9cecfd5d001b623746043c6c7256095f647bf45cbe1a8108931aee8d04f8bb0"
     },
     "README.md": {
-      "bytes": 9093,
-      "sha256": "7d02ef2ff71759eb6f0396e05396321bd1a6f6188a19d2bd82fce1cbf41def96"
+      "bytes": 10972,
+      "sha256": "c507a2974c2a4ace9fc0a4b27df5ec7fc9b12dc1ae935135aae42544e6fd2b8f"
     },
     "conda-recipe/conda_build_config.yaml": {
       "bytes": 15,
@@ -48,15 +48,15 @@
     },
     "conda-recipe/meta.yaml": {
       "bytes": 1039,
-      "sha256": "c7f4bcc56dda1d2f156830e703a8e2ddd4aad142f87bd6d5fc3c63786e92d4d9"
+      "sha256": "dd7824e94a16f03d1cdd8ff20bb84f5f69b4faaaf24a61efafba495a7cba2d78"
     },
     "docs/ALGORITHM.md": {
-      "bytes": 1007,
-      "sha256": "c677e4e0b74f15380aa5014b4cdf35a0c5446d79fdd654b357adbc5a4963494b"
+      "bytes": 2336,
+      "sha256": "909d575a57a8044c49b9ff0bfcf28f260eb0724ef4378284f7622c067614efad"
     },
     "docs/OPERATIONS.md": {
-      "bytes": 937,
-      "sha256": "b03f83c2470f31b27b4bbbb22a56e2ff6e4ffc13bcd7d18be8a46c5b33ea6ad3"
+      "bytes": 1316,
+      "sha256": "093447b05ba8c3d6376eb0e5eb12d4d9d851e591f4bd863457153c7d2fd871cd"
     },
     "docs/PUBLISHING.md": {
       "bytes": 4309,
@@ -64,7 +64,7 @@
     },
     "pyproject.toml": {
       "bytes": 1459,
-      "sha256": "b53c569210850148055f0044db0831ad2ac4ac5f4a871af8f377541551e94ec6"
+      "sha256": "be5ceabd4be8a3f7b4017a9a9a0d4446a8bedfa271583bf038484b9d0ebbe283"
     },
     "requirements.lock": {
       "bytes": 27,
@@ -79,24 +79,24 @@
       "sha256": "9797157041dc95a491acc026195a725de696b929a9ba08e48dfe31968d7923af"
     },
     "src/ginfinity_sw/__init__.py": {
-      "bytes": 562,
-      "sha256": "994e776ffff0699a24e06babf93cf3fc38fc8889c3b0a4c424dfa3289f5008f3"
+      "bytes": 877,
+      "sha256": "ebc526e5780e683901a0c5521c32c037d558e27fde17d6a3ef1513f2038bb4b7"
     },
     "src/ginfinity_sw/__main__.py": {
       "bytes": 48,
       "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
     },
     "src/ginfinity_sw/cli.py": {
-      "bytes": 4359,
-      "sha256": "acf481b9fb930ed07e62d54309e5dc0ef98c1bd13c79e96c48b7595debd5683f"
+      "bytes": 7347,
+      "sha256": "63bc5c03f7b92d97fff7125d8992460cfd1f657381c84f7922767dc9d076c313"
     },
     "src/ginfinity_sw/core.py": {
-      "bytes": 10204,
-      "sha256": "7de11fbe40645a191ceb8cc752983ca925cdfd6502feb32c0c77c1d394a6ad22"
+      "bytes": 25208,
+      "sha256": "7421eed24a2b351c0c039035b33e3f74b648c3c06a20f4ffc0d9fd03f1b84ee5"
     },
     "src/ginfinity_sw/formatting.py": {
-      "bytes": 5324,
-      "sha256": "7dc1229b5a228fc76c19aea027823ae827276a03fb7814f409c8be0e526729c6"
+      "bytes": 6871,
+      "sha256": "37afc401654a92586c6f9ca935da4070b461d5d430088e2282be2430b9d414a1"
     },
     "src/ginfinity_sw/metadata.py": {
       "bytes": 2646,
@@ -111,16 +111,16 @@
       "sha256": "8c75b617726556b77f7765ea7fb2d37a0203fddb8c336687122f0030b78f3bf9"
     },
     "tests/test_core.py": {
-      "bytes": 2577,
-      "sha256": "8f7424633605d90b91e7427a5af495bfc4ee0470c63e6d8dc24b92992ecd39cb"
+      "bytes": 4611,
+      "sha256": "1982edb4fd82941d5222b44d9458edf2d67594648f15878bfa48bafb10d39d82"
     },
     "tests/test_release.py": {
       "bytes": 1817,
       "sha256": "506b139d7aa15d511e8bade2721403e84de399c5ea19604063900bac3477d1c5"
     },
     "tests/test_sw_cli.py": {
-      "bytes": 3210,
-      "sha256": "44794f3b879327abe2d18ef0961f0623cb47f7862b88e7504dbf1f2b22e261e4"
+      "bytes": 4621,
+      "sha256": "82417aded388ee3c7aa34ba00082e9ebc6150c422b8a7f73861a449ebaca28dc"
     }
   }
 }

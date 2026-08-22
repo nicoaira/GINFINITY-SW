@@ -1,6 +1,7 @@
 import json
 
 import numpy as np
+import pytest
 
 from ginfinity_sw.cli import main
 
@@ -83,3 +84,38 @@ def test_cli_accepts_configurable_metadata_columns(tmp_path):
         "--structure-column", "fold", "--delimiter", ",",
     ]) == 0
     assert json.loads(output.read_text())["match_count"] == 4
+
+
+def test_cli_reports_one_pair_row_for_multiple_hsps(tmp_path):
+    embeddings = tmp_path / "embeddings.npz"
+    query = np.eye(16)[:6]
+    target = np.vstack([query[:3], np.eye(16)[6:16], query[3:]])
+    np.savez(embeddings, query=query, mate=target)
+    metadata = tmp_path / "molecules.tsv"
+    metadata.write_text(
+        "transcript_id\tsequence\tsecondary_structure\n"
+        "query\tACGUAC\t......\n"
+        "mate\tACGAAAAAAAAAAUAC\t................\n")
+    parameters = tmp_path / "alignment.json"
+    parameters.write_text(json.dumps({
+        "scoring_parameters": {
+            "mu": 0.2, "sigma": 1.0, "gamma": 5.0,
+            "score_min": -4.0, "score_max": 8.0,
+            "gap_open": 6.0, "gap_extend": 1.0, "score_offset": 0.0,
+        },
+        "evalue_parameters": {"lambda": 1.0, "k": 1.0},
+    }))
+    output = tmp_path / "alignment-output.json"
+    assert main([
+        "--embeddings", str(embeddings), "--metadata", str(metadata),
+        "--parameters", str(parameters), "--query", "query",
+        "--target", "mate", "--output", str(output),
+    ]) == 0
+    got = json.loads(output.read_text())
+
+    assert got["alignment_count"] == 2
+    assert got["total_score"] == 24.0
+    assert got["max_score"] == 12.0
+    assert got["evalue"] == pytest.approx(6 * 16 * np.exp(-24.0))
+    assert "Total score = 24" in got["formatted"]
+    assert "HSP 2" in got["formatted"]

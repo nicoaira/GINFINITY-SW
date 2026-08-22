@@ -58,6 +58,29 @@ print(result.query_span, result.target_span)  # 0-based, half-open
 print(result.columns)                          # -1 denotes a gap
 ```
 
+For BLAST-style pair reporting, extract multiple disjoint local HSPs and keep
+their pair summary together:
+
+```python
+from ginfinity_sw import EValueParameters, align_multiple
+
+pair = align_multiple(
+    query,
+    target,
+    params=parameters,
+    max_alignments=16,
+    evalue_parameters=EValueParameters(lambda_=1.0, k=1.0),
+)
+print(pair.total_score, pair.max_score, pair.evalue)
+print(pair.alignments)  # individual HSP tracebacks remain available
+```
+
+The pair-level values are `total_score = sum(HSP scores)`, `max_score = max(HSP
+score)`, and `E = K * query_length * target_length * exp(-lambda *
+total_score)`. The default E-value constants are a transparent approximation
+for transformed cosine scores; calibrate `lambda_` and `k` for a specific
+embedding/background distribution when possible.
+
 Use the GINFINITY model-specific parameters without coupling the packages:
 
 ```python
@@ -80,6 +103,8 @@ ranking = rank(
 ```
 
 Ranking is deterministic: descending score with identifier as the tie-breaker.
+Use `rank_pairs` when the report should include all qualified HSPs and rank by
+the pair-level E-value, aggregate score, and strongest HSP score.
 
 ## Command line
 
@@ -117,6 +142,19 @@ jq -r .formatted result.json
 ```
 
 Omit `--target` to rank the query against every other array in the archive.
+Each JSON ranking row contains `total_score`, `max_score`, `alignment_count`,
+and the pair-level `evalue`. The target-mode JSON result contains the same
+summary plus the individual HSPs under `alignments`; its formatted output
+starts with the summary and then renders each HSP. Use `--max-alignments`,
+`--min-score`, and `--min-match-count` to control extraction. E-value constants
+can be supplied in the parameter file:
+
+```json
+{
+  "scoring_parameters": {"mu": 0.3, "gamma": 4.0},
+  "evalue_parameters": {"lambda": 1.0, "k": 1.0}
+}
+```
 
 ### Resulting alignment
 
@@ -220,12 +258,18 @@ and latency accordingly.
 ## Public objects
 
 - `ScoringParameters`: validated immutable scoring configuration.
+- `EValueParameters`: pair-level E-value calibration constants.
 - `Alignment`: score, half-open spans, gapped columns, and matched pairs.
+- `AlignmentSet`: one pair result containing disjoint HSPs, total/max scores,
+  and one aggregate E-value.
 - `align`: embedding matrices to exact local alignment.
+- `align_multiple`: extract multiple disjoint HSPs for one pair.
 - `align_scores`: precomputed substitution scores to exact local alignment.
+- `collapse_alignments`: group HSPs into one pair result.
 - `rank`: deterministic score-only candidate ranking.
+- `rank_pairs`: deterministic pair-level ranking by E-value and scores.
 - `similarity_matrix`, `transform_scores`, `normalize_embeddings`.
-- `format_alignment`: readable RNA alignment rendering.
+- `format_alignment`, `format_alignment_set`: readable RNA alignment rendering.
 - `read_metadata_table`: configurable delimited sequence/structure metadata.
 
 See the

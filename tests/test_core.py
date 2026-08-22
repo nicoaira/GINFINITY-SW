@@ -1,9 +1,11 @@
 import numpy as np
 import pytest
 
-from ginfinity_sw import (ScoringParameters, align, align_scores, rank,
+from ginfinity_sw import (Alignment, EValueParameters, ScoringParameters,
+                           align, align_multiple, align_scores,
+                           collapse_alignments, pair_evalue, rank,
                            similarity_matrix)
-from ginfinity_sw.formatting import format_alignment
+from ginfinity_sw.formatting import format_alignment, format_alignment_set
 
 
 PARAMETERS = ScoringParameters(
@@ -51,6 +53,53 @@ def test_rank_is_score_descending_with_stable_identifier_ties():
     query = np.eye(4)
     ranking = rank(query, [("z", query), ("a", query)], params=PARAMETERS)
     assert [identifier for identifier, _ in ranking] == ["a", "z"]
+
+
+def test_multiple_hsps_are_collapsed_with_total_max_and_pair_evalue():
+    query = np.eye(16)[:6]
+    target = np.vstack([query[:3], np.eye(16)[6:16], query[3:]])
+    result = align_multiple(query, target, params=PARAMETERS)
+
+    assert result.alignment_count == 2
+    assert [alignment.match_count for alignment in result.alignments] == [3, 3]
+    assert result.total_score == pytest.approx(24.0)
+    assert result.max_score == pytest.approx(12.0)
+    assert result.evalue == pytest.approx(6 * 16 * np.exp(-24.0))
+    assert result.to_dict()["alignment_count"] == 2
+    assert result.to_dict()["total_score"] == pytest.approx(24.0)
+
+
+def test_collapse_alignments_sorts_hsps_and_uses_aggregate_score():
+    weaker = Alignment(3.0, (4, 6), (5, 7), ((4, 5), (5, 6)), 6)
+    stronger = Alignment(5.0, (0, 2), (1, 3), ((0, 1), (1, 2)), 6)
+    parameters = EValueParameters(lambda_=0.5, k=2.0)
+    result = collapse_alignments(
+        [stronger, weaker],
+        query_length=10,
+        target_length=11,
+        evalue_parameters=parameters,
+    )
+
+    assert result.alignments[0] is stronger
+    assert result.total_score == pytest.approx(8.0)
+    assert result.max_score == pytest.approx(5.0)
+    assert result.evalue == pytest.approx(2 * 110 * np.exp(-4.0))
+    assert pair_evalue(8.0, 10, 11, parameters=parameters) == pytest.approx(
+        result.evalue)
+
+
+def test_alignment_set_formatter_keeps_pair_summary_and_hsps_together():
+    query = np.eye(16)[:6]
+    target = np.vstack([query[:3], np.eye(16)[6:16], query[3:]])
+    result = align_multiple(query, target, params=PARAMETERS)
+    rendered = format_alignment_set(
+        result, "ACGUAC", "......", "ACG" + "A" * 10 + "UAC", "." * 16)
+
+    assert "Total score = 24" in rendered
+    assert "Max score = 12" in rendered
+    assert "E-value =" in rendered
+    assert "HSP 1" in rendered
+    assert "HSP 2" in rendered
 
 
 def test_alignment_formatter_explains_statistics_and_conserved_pairs():

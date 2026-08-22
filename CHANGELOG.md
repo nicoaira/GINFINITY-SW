@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.1.0 - 2026-08-22
+
+- Added disjoint multi-HSP extraction and pair-level collapse reports with
+  total score, max score, and an aggregate BLAST-style E-value.
 - Added `scripts/release.py` to preflight a release and publish it by
   creating the GitHub release that starts the PyPI and Anaconda.org
   workflows.
